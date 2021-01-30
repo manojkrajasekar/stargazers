@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Container,
+  makeStyles,
+  MuiThemeProvider,
+  createMuiTheme,
+  CssBaseline,
+} from "@material-ui/core";
+import TopicContainer from "./components/Topic/TopicContainer";
+
+const useStyles = makeStyles((theme) => ({
+  appDataContainer: {
+    maxWidth: 1000,
+    padding: theme.spacing(2),
+  },
+  appBar: {
+    backgroundColor: "#6bb3d6",
+  },
+}));
+
+const theme = createMuiTheme();
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <CssBaseline />
+      <MuiThemeProvider theme={theme}>
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <Typography variant="h5">Git Topics Search App</Typography>
+          </Toolbar>
+        </AppBar>
+        <Toolbar />
+        <Container className={classes.appDataContainer}>
+          <TopicContainer />
+        </Container>
+      </MuiThemeProvider>
+    </main>
   );
 }
 
