@@ -14,7 +14,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles(() => ({
-  chipContainer: {
+  chipStyles: {
     backgroundColor: "#5389a3",
   },
 }));
@@ -28,7 +28,7 @@ const Topic = ({ topic }) => {
       <ListItem button divider onClick={() => setShowRelatedTopics(true)}>
         <ListItemText data-testid="topicName" primary={topic.name} />
         <Chip
-          className={classes.chipContainer}
+          className={classes.chipStyles}
           color="primary"
           label={topic.stargazerCount}
         />
@@ -48,7 +48,7 @@ const Topic = ({ topic }) => {
                   <ListItemText primary={relatedTopic.name} />
                   <ListItemSecondaryAction>
                     <Chip
-                      className={classes.chipContainer}
+                      className={classes.chipStyles}
                       color="primary"
                       label={relatedTopic.stargazerCount}
                     />

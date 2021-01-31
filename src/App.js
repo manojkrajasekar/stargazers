@@ -30,7 +30,7 @@ function App() {
       <MuiThemeProvider theme={theme}>
         <AppBar className={classes.appBar}>
           <Toolbar>
-            <Typography variant="h5">Git Topics Search App</Typography>
+            <Typography variant="h5">Git Topics Explorer App</Typography>
           </Toolbar>
         </AppBar>
         <Toolbar />
