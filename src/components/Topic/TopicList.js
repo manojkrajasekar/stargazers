@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Topic from "./Topic";
 
 export const GET_RELATED_TOPICS_LIST = gql`
-  query getTopics($topicNameFilter: String!) {
+  query getRelatedTopics($topicNameFilter: String!) {
     search(query: $topicNameFilter, type: REPOSITORY, first: 20) {
       nodes {
         ... on Repository {

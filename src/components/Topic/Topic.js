@@ -34,8 +34,6 @@ const Topic = ({ topic }) => {
         />
       </ListItem>
       <Dialog
-        maxWidth="md"
-        fullWidth
         open={showRelatedTopics}
         onClose={() => setShowRelatedTopics(false)}
       >
@@ -43,7 +41,7 @@ const Topic = ({ topic }) => {
           <Typography variant="h5">Related Topics</Typography>
         </DialogTitle>
         <Grid container>
-          <Grid item md={14}>
+          <Grid item md={16}>
             <List component="div" role="list">
               {topic.relatedTopics?.map((relatedTopic, index) => (
                 <ListItem button divider role="listitem" key={index}>
@@ -63,7 +61,7 @@ const Topic = ({ topic }) => {
                   align="center"
                   color="secondary"
                 >
-                  No related topic found.
+                  No Related Topic found.
                 </Typography>
               )}
             </List>
